@@ -6,7 +6,7 @@ const Blog = () => {
             <h2 className='text-center bg-green-600 text-white p-3 text-xl font-bold mx-20 lg:mx-96 rounded-xl mt-20'>Blog</h2>
             <div className="card w-[90%] bg-base-100 shadow-xl rounded-xl m-auto lg:ml-16 p-10 lg:mr-32 text-justify">
                 <div className="card-body">
-                    <h2 className="card-title text-3xl font-bold mb-2">How Does It Actually Work?</h2>
+                    <h2 className="card-title text-3xl font-bold mb-2">How Does react Actually Work?</h2>
                     <p><span className='font-semibold'>Introduction to ReactJS:</span> Let us understand this with a practical example.
 
                         Let’s say one of your friends posted a photograph on Facebook. Now you go and like the image and then you started checking out the comments too. Now while you are browsing over comments you see that the likes count has increased by 100, since you liked the picture, even without reloading the page. This magical count change is because of ReactJS.
