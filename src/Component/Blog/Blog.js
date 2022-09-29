@@ -23,6 +23,20 @@ const Blog = () => {
                     </div>
                 </div>
             </div>
+            <div className="card w-[90%] bg-base-100 shadow-xl rounded-xl m-auto lg:m-16 p-10 lg:mr-32 text-justify">
+                <div className="card-body">
+                    <h2 className="card-title text-3xl font-bold mb-2">What are the differences between props and state ?</h2>
+                    <p><span className='font-semibold'>State:</span>
+                        The state is an updatable structure that is used to contain data or information about the component and can change over time. The change in state can happen as a response to user action or system event. It is the heart of the react component which determines the behavior of the component and how it will render. A state must be kept as simple as possible. It represents the component's local state or information. It can only be accessed or modified inside the component or by the component directly.
+
+
+                        <br />
+                        <span className='font-semibold'>Props:</span>
+                        Props are read-only components. It is an object which stores the value of attributes of a tag and work similar to the HTML attributes. It allows passing data from one component to other components. It is similar to function arguments and can be passed to the component the same way as arguments passed in a function. Props are immutable so we cannot modify the props from inside the component.</p>
+                    <div className="card-actions justify-end">
+                    </div>
+                </div>
+            </div>
             
 
         </div>
