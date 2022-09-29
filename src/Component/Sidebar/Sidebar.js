@@ -13,14 +13,11 @@ const Sidebar = ({ list }) => {
     for (const exercise of list) {
         time = time + exercise.time
     }
+    // breakTime 
+    const [breakTime, setBreakTime] = useState(JSON.parse(localStorage.getItem('Break Time')) || [])
+    localStorage.setItem('Break Time', JSON.stringify(breakTime))
+    const dbtime = localStorage.getItem('Break Time')
 
-    const [bt, breakTime] = useState({})
-    localStorage.setItem('Break Time', JSON.stringify(bt))
-
-    const dbt = localStorage.getItem('Break Time')
-    // const breakTime = (mg) => {
-    //     setBt(mg);
-    // }
 
 
 
@@ -65,11 +62,11 @@ const Sidebar = ({ list }) => {
             {/* Add A Break  */}
             <h3 className='text-xl font-medium py-5'>Add A Break</h3>
             <div className=' bg-gray-100 flex justify-around text-sm font-medium p-4 rounded-xl'>
-                <button className=' bg-white p-2 rounded-full hover:bg-green-600 hover:text-white' onClick={() => breakTime(10)}>10s</button>
-                <button className='btn bg-white p-2 rounded-full hover:bg-green-600 hover:text-white' onClick={() => breakTime(20)}>20s</button>
-                <button className='btn bg-white p-2 rounded-full hover:bg-green-600 hover:text-white' onClick={() => breakTime(30)}>30s</button>
-                <button className='btn bg-white p-2 rounded-full hover:bg-green-600 hover:text-white' onClick={() => breakTime(40)}>40s</button>
-                <button className='btn bg-white p-2 rounded-full hover:bg-green-600 hover:text-white' onClick={() => breakTime(50)}>50s</button>
+                <button className=' bg-white p-2 rounded-full hover:bg-green-600 hover:text-white' onClick={() => setBreakTime(10)}>10s</button>
+                <button className='btn bg-white p-2 rounded-full hover:bg-green-600 hover:text-white' onClick={() => setBreakTime(20)}>20s</button>
+                <button className='btn bg-white p-2 rounded-full hover:bg-green-600 hover:text-white' onClick={() => setBreakTime(30)}>30s</button>
+                <button className='btn bg-white p-2 rounded-full hover:bg-green-600 hover:text-white' onClick={() => setBreakTime(40)}>40s</button>
+                <button className='btn bg-white p-2 rounded-full hover:bg-green-600 hover:text-white' onClick={() => setBreakTime(50)}>50s</button>
             </div>
             {/* Exercise Details */}
             <h3 className='text-xl font-medium py-5'>Exercise Details </h3>
@@ -83,7 +80,7 @@ const Sidebar = ({ list }) => {
             <div className='flex justify-between bg-gray-100  font-medium p-4 rounded-xl'>
                 <h3>Break time</h3>
                 <h5>
-                    <span> {dbt} </span>
+                    <span> {dbtime} </span>
                     seconds
                 </h5>
             </div>
