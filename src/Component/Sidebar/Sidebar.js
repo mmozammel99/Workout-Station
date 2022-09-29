@@ -14,19 +14,15 @@ const Sidebar = ({ list }) => {
         time = time + exercise.time
     }
 
-
-    const [bt, setBt] = useState([])
-
-    useEffect(() => {
-        console.log('gg');
-        localStorage.setItem('Break Time', JSON.stringify(bt))
-    }, [bt])
-    const breakTime = (mg) => {
-        setBt(mg);
-    }
-
+    const [bt, breakTime] = useState({})
+    localStorage.setItem('Break Time', JSON.stringify(bt))
 
     const dbt = localStorage.getItem('Break Time')
+    // const breakTime = (mg) => {
+    //     setBt(mg);
+    // }
+
+
 
     // sweetalart
     const completed = () => {
@@ -42,7 +38,7 @@ const Sidebar = ({ list }) => {
 
 
     return (
-        <div className='bg-white p-3 fixed right-0 top-0'>
+        <div className='bg-white p-3 lg:fixed lg:right-0 lg:top-0 rounded-xl lg:rounded-none'>
             {/* description pat 1*/}
             <div className='flex items-center py-5'>
                 <img className='w-20' src="pic.png" alt="" />

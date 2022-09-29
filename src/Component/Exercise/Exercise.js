@@ -16,19 +16,23 @@ const Exercise = () => {
         const newList = [...list, exercises]
         setList(newList)
     }
-    
+
     return (
 
-        <div className='grid grid-cols-3 gap-5 mx-12 mt-2'>
-            <Sidebar list={list}></Sidebar>
-            {
-                exercises.map(exercise => <Card
-                    key={exercise.id}
-                    exercise={exercise}
-                    addToList={addToList}
+        <div ><h3 className='text-xl font-medium lg:m-8 hidden lg:inline lg:ml-12'>Select today’s exercise</h3>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 mx-6 lg:mx-12 lg:mt-2'>
+                <Sidebar list={list}></Sidebar>
 
-                ></Card>)
-            }
+                {
+                    exercises.map(exercise => <Card
+                        key={exercise.id}
+                        exercise={exercise}
+                        addToList={addToList}
+
+                    ></Card>)
+                }
+
+            </div>
 
         </div>
     );
