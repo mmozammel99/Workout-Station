@@ -3,8 +3,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons'
 import Swal from 'sweetalert2'
 
+
+
+
+
+
+const Sidebar = ({list}) => {
+let time = 0 ;
+for(const exercise of list ){
+    time = time + exercise.time
+}
+
+// break time 
+const breakTime = () =>{
+    // const time = document.getElementsByClassName('btn').innerText;
+    // console.log(time);
+    localStorage.setItem('Break Time',JSON.stringify(time))
+
+}
+const btn = React.useRef();
+// log on second render
+// My name is Shubham, I work for  for the last 5 years.
+console.log(btn.current?.innerText);
+
+
 // sweetalart
-function completed(){
+const completed = () => {
     Swal.fire({
         icon:'success',
         title:'Success',
@@ -16,11 +40,8 @@ function completed(){
 
 
 
-const Sidebar = () => {
-
-
     return (
-        <div className='bg-white p-3 fixed right-0'>
+        <div className='bg-white p-3 fixed right-0 top-0'>
             {/* description pat 1*/}
             <div className='flex items-center py-5'>
                 <img className='w-20' src="pic.png" alt="" />
@@ -47,18 +68,18 @@ const Sidebar = () => {
             {/* Add A Break  */}
             <h3 className='text-xl font-medium py-5'>Add A Break</h3>
             <div className=' bg-gray-100 flex justify-around text-sm font-medium p-4 rounded-xl'>
-                <button className='bg-white p-2 rounded-full hover:bg-green-600 hover:text-white'>10s</button>
-                <button className='bg-white p-2 rounded-full hover:bg-green-600 hover:text-white'>20s</button>
-                <button className='bg-white p-2 rounded-full hover:bg-green-600 hover:text-white'>30s</button>
-                <button className='bg-white p-2 rounded-full hover:bg-green-600 hover:text-white'>40s</button>
-                <button className='bg-white p-2 rounded-full hover:bg-green-600 hover:text-white'>50s</button>
+                <button btn={btn} className=' bg-white p-2 rounded-full hover:bg-green-600 hover:text-white' onClick={breakTime}>10s</button>
+                <button className='btn bg-white p-2 rounded-full hover:bg-green-600 hover:text-white'>20s</button>
+                <button className='btn bg-white p-2 rounded-full hover:bg-green-600 hover:text-white'>30s</button>
+                <button className='btn bg-white p-2 rounded-full hover:bg-green-600 hover:text-white'>40s</button>
+                <button className='btn bg-white p-2 rounded-full hover:bg-green-600 hover:text-white'>50s</button>
             </div>
             {/* Exercise Details */}
             <h3 className='text-xl font-medium py-5'>Exercise Details </h3>
             <div className='flex justify-between bg-gray-100  font-medium p-4 rounded-xl mb-3'>
                 <h3>Exercise time </h3>
                 <h5>
-                    <span> 0 </span>
+                    <span> {time} </span>
                     seconds
                 </h5>
             </div>

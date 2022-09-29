@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../Card/Card';
+import Sidebar from '../Sidebar/Sidebar';
 
 const Exercise = () => {
-     const [exercises, setExercise] = useState([]);
-     const [list, setList] = useState([]);
+    const [exercises, setExercise] = useState([]);
+    const [list, setList] = useState([]);
 
     useEffect(() => {
         fetch('exercises.json')
@@ -11,19 +12,20 @@ const Exercise = () => {
             .then(data => setExercise(data))
     }, [])
 
-    const addToList = (exercises) =>{
-        console.log(exercises);
+    const addToList = (exercises) => {
         const newList = [...list, exercises]
-setList(newList)
+        setList(newList)
     }
+    
     return (
 
         <div className='grid grid-cols-3 gap-5 mx-12 mt-2'>
+            <Sidebar list={list}></Sidebar>
             {
                 exercises.map(exercise => <Card
                     key={exercise.id}
                     exercise={exercise}
- addToList ={addToList} 
+                    addToList={addToList}
 
                 ></Card>)
             }

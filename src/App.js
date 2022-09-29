@@ -1,6 +1,6 @@
 import Exercise from "./Component/Exercise/Exercise";
 import Header from "./Component/Header/Header";
-import Sidebar from "./Component/Sidebar/Sidebar";
+
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         <Exercise></Exercise>
 
       </div>
-      <Sidebar></Sidebar>
+     
 
     </div>
   );
