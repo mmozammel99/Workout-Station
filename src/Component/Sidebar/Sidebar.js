@@ -15,9 +15,18 @@ const Sidebar = ({ list }) => {
     }
 
 
-    const [bt, breakTime] = useState(['bt'])
-    localStorage.setItem('Break Time', JSON.stringify(bt))
-    const dbt =localStorage.getItem('Break Time')
+    const [bt, setBt] = useState([])
+
+    useEffect(() => {
+        console.log('gg');
+        localStorage.setItem('Break Time', JSON.stringify(bt))
+    }, [bt])
+    const breakTime = (mg) => {
+        setBt(mg);
+    }
+
+
+    const dbt = localStorage.getItem('Break Time')
 
     // sweetalart
     const completed = () => {
