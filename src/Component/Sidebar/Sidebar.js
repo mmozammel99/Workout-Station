@@ -25,7 +25,7 @@ const Sidebar = ({ list }) => {
     const completed = () => {
         Swal.fire({
             icon: 'success',
-            title: 'Success',
+            title: 'Congratulation',
             text: 'Today`s  activities are completed',
         }
         )
