@@ -1,6 +1,6 @@
+import Blog from "./Component/Blog/Blog";
 import Exercise from "./Component/Exercise/Exercise";
 import Header from "./Component/Header/Header";
-
 
 
 function App() {
@@ -9,9 +9,9 @@ function App() {
       <div className="col-span-3">
         <Header></Header>
         <Exercise></Exercise>
-
+        <Blog></Blog>
       </div>
-     
+
 
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons'
 import Swal from 'sweetalert2'
@@ -14,7 +14,7 @@ const Sidebar = ({ list }) => {
         time = time + exercise.time
     }
     // breakTime 
-    const [breakTime, setBreakTime] = useState(JSON.parse(localStorage.getItem('Break Time')) || [])
+    const [breakTime, setBreakTime] = useState(JSON.parse(localStorage.getItem('Break Time')) || 0)
     localStorage.setItem('Break Time', JSON.stringify(breakTime))
     const dbtime = localStorage.getItem('Break Time')
 
